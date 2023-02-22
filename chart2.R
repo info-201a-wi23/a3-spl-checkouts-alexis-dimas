@@ -6,6 +6,9 @@ spl_10_df <- read.csv("2017-2023-10-Checkouts-SPL-Data.csv", stringsAsFactors = 
 spl_10_df <- spl_10_df %>% mutate(date = paste0(CheckoutYear, "-", CheckoutMonth, "-01"))
 spl_10_df$date <- as.Date(spl_10_df$date, format = "%Y-%m-%d")
 
+
+nonfiction_df <- spl_10_df %>% filter(str_detect(Subjects, "Nonfiction"))
+
 nonfiction_checkouts <- spl_10_df %>% filter(str_detect(Subjects, "Nonfiction")) %>% group_by(date) %>% summarise(sum_checkouts = sum(Checkouts, na.rm = TRUE))
 
 fiction_checkouts <- spl_10_df %>% filter(str_detect(Subjects, "Fiction")) %>% group_by(date) %>% summarise(sum_checkouts = sum(Checkouts, na.rm = TRUE))
