@@ -1,21 +1,23 @@
-# Most popular genres that emerged from the pandemic (by month)
-# Non-Fiction vs Fiction
+library("dplyr")
+library("stringr")
+library("ggplot2")
 
 spl_10_df <- read.csv("2017-2023-10-Checkouts-SPL-Data.csv", stringsAsFactors = FALSE)
 
 spl_10_df <- spl_10_df %>% mutate(date = paste0(CheckoutYear, "-", CheckoutMonth, "-01"))
 spl_10_df$date <- as.Date(spl_10_df$date, format = "%Y-%m-%d")
 
+orwell_df <- spl_10_df %>% filter(str_detect(Creator, "George Orwell"))
 
-nonfiction_df <- spl_10_df %>% filter(str_detect(Subjects, "Nonfiction"))
+book_1984_checkouts <- orwell_df %>% filter(str_detect(Title, "1984")) %>% group_by(date) %>% summarise(sum_checkouts = sum(Checkouts, na.rm = TRUE))
 
-nonfiction_checkouts <- spl_10_df %>% filter(str_detect(Subjects, "Nonfiction")) %>% group_by(date) %>% summarise(sum_checkouts = sum(Checkouts, na.rm = TRUE))
-
-fiction_checkouts <- spl_10_df %>% filter(str_detect(Subjects, "Fiction")) %>% group_by(date) %>% summarise(sum_checkouts = sum(Checkouts, na.rm = TRUE))
+book_AF_checkouts <- orwell_df %>% filter(str_detect(Title, "Animal Farm")) %>% group_by(date) %>% summarise(sum_checkouts = sum(Checkouts, na.rm = TRUE))
 
 ggplot() + 
-  geom_line(data = nonfiction_checkouts, aes(x = date, y = sum_checkouts), color = "blue") + 
-  geom_line(data = fiction_checkouts, aes(x = date, y = sum_checkouts), color = "red") + 
-  labs(title = "Nonfiction vs Fiction Checkouts 2017-2023",
+  geom_line(data = book_1984_checkouts, aes(x = date, y = sum_checkouts, color = "1984")) + 
+  geom_line(data = book_AF_checkouts, aes(x = date, y = sum_checkouts, color = "Animal Farm")) + 
+  scale_color_manual(values=c("#0000ff", "#ff0000")) + 
+  labs(title = "1984 vs Animal Farm Checkouts 2017-2023",
        x = "Date",
-       y = "Number of checkouts")
+       y = "Number of checkouts",
+       color = "Legend")
