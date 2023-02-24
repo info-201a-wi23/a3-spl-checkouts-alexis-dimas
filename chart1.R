@@ -32,7 +32,7 @@ ggplot() +
   geom_line(data = f_checkouts, aes(x = date, y = fiction_checkouts, color = "Fiction")) + 
   scale_color_manual(values=c("#0000ff", "#ff0000")) + 
   scale_y_continuous(labels = label_number_si()) + 
-  labs(title = "Non-fiction and Fiction Checkouts In The Past Six Years",
+  labs(title = "Non-fiction And Fiction Checkouts In The Past Six Years",
        x = "Date",
        y = "Number of Checkouts",
        color = "Legend")
