@@ -33,7 +33,7 @@ This showcases the number of audiobook, book, eBook, and magazine checkouts in t
 
 This showcases the number of checkouts for the top five greatest books of all time in the past decade.
 
-```{r chart3, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("chart3.R")}
+```{r chart3, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("chart3.R"), fig.width=10}
 ```
 
 

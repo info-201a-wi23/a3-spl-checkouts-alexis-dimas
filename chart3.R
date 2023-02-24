@@ -44,24 +44,6 @@ gatsby_checkouts <- spl_5_df %>%
   summarise(gatsby_checkouts = sum(Checkouts, na.rm = TRUE)) %>% 
   pull(gatsby_checkouts)
 
-ggplot() + 
-  geom_line(data = num_isolt, 
-            aes(x = date, y = isolt, color = "ISoLT")) + 
-  geom_line(data = num_ulysses, 
-            aes(x = date, y = ulysses, color = "Ulysses")) + 
-  geom_line(data = num_don_quixote, 
-            aes(x = date, y = don_quixote, color = "Don Quixote")) + 
-  geom_line(data = num_ohyos, 
-            aes(x = date, y = ohyos, color = "OHYoS")) + 
-  geom_line(data = num_gatsby, 
-            aes(x = date, y = gatsby, color = "The Great Gatsby")) + 
-  scale_color_manual(values=c("#0000ff", "#ff0000", "#008000", "#a020f0", "#ffa500")) + 
-  scale_y_continuous(labels = label_number_si()) + 
-  labs(title = "Top 5 Books of All Time",
-       x = "Date",
-       y = "Number of checkouts",
-       color = "Legend")
-
 
 books <- c("In Search of Lost Time", "Ulysses", "Don Quixote", 
            "One Hundred Years of Solitude", "The Great Gatsby")
