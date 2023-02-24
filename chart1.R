@@ -35,4 +35,4 @@ ggplot() +
   labs(title = "Non-fiction And Fiction Checkouts In The Past Six Years",
        x = "Date",
        y = "Number of Checkouts",
-       color = "Legend")
+       color = "Genre")
