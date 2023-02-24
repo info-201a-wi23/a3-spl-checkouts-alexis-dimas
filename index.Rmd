@@ -24,14 +24,14 @@ This showcases the number of non-fiction to fiction checkouts in the past six ye
 
 ### Second Trends Over Time Chart
 
-This showcases the number of 1984 to Animal Farm checkouts in the past six years with a focus on the effect of the COVID-19 pandemic.
+This showcases the number of audiobook, book, eBook, and magazine checkouts in the past six years with a focus on the effect of the COVID-19 pandemic.
 
 ```{r chart2, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("chart2.R")}
 ```
 
 ### Your Choice
 
-
+This showcases the number of checkouts for the top five greatest books of all time in the past decade.
 
 ```{r chart3, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("chart3.R")}
 ```
