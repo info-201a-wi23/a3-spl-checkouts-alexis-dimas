@@ -17,23 +17,27 @@ output: html_document
 
 ### First Trends Over Time Chart
 
-This showcases the number of non-fiction to fiction checkouts in the past six years with a focus on the effect of the COVID-19 pandemic.
+This chart showcases the number of non-fiction to fiction checkouts in the past six years. I enjoy reading non-fiction but also read fiction if a book catches my attention. When I'm on the bus I tend to see people reading fiction books and I know that most people in Seattle have this preference. I wanted to analyze this and see how the number of non-fiction checkouts compared to fiction checkouts. Also, I wanted to see if the pandemic had any impact on the reading preferences of Seattle bookworms. The chart was designed to demonstrate the number of checkouts for fiction and non-fiction books over time. The x-axis is time in years for the past six years and the y-axis is the total number of checkouts throughout the year.
+
+My observation was confirmed and the visualization shows that Seattle people read more fiction than non-fiction. To my surprise, the number of fiction checkouts rebounded by a greater amount than non-fiction once things began to reopen in the second half of 2020 and all of 2021. However, there was a small spike in the number of non-fiction checkouts in the middle of 2020 and the number of checkouts has been higher than pre-pandemic levels. All in all, Seattle books worms read their usual fiction title but have shown more interest in non-fiction in recent years.
 
 ```{r chart1, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("chart1.R")}
 ```
 
 ### Second Trends Over Time Chart
 
-This showcases the number of audiobook, book, eBook, and magazine checkouts in the past six years with a focus on the effect of the COVID-19 pandemic.
+This chart showcases different types of publications (Book, eBook, Audio book, and Magazine) being checked out over the past six years. Based on my observation, I felt like the pandemic had made everything digital and I wanted to see if there was a sudden shift in the type of publications being checked out. The chart was designed to demonstrate the number of checkouts for select types of publications over time. The x-axis is time in years for the past six years and the y-axis is the total number of checkouts throughout the year.
+
+Surprisingly, physical books have returned to their normal level and looks like it is only been increasing. Perhaps the pandemic had the opposite effect on some and only increased their preference on how to consume literature. However, the number of eBook and Audio book checkouts has been steadily increasing since which may or may not be due to the pandemic. An argument could be made that this was inevitable due to the convenience that they provide. One thing that surprised me was how the number of magazine checkouts suddenly stopped in 2019. I thought I had made a mistake but I could not find any data on it nor news article that covered what happened. I included this type to analyze if magazine checkouts had slowed or were declining and it looks like that may be the case.
 
 ```{r chart2, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("chart2.R")}
 ```
 
-### Your Choice
+### Personal Choice Chart
 
-This showcases the number of checkouts for the top five greatest books of all time in the past decade.
+For my last chart, I gathered what are considered to be the [top five greatest books](https://thegreatestbooks.org/) ever written and analyzed the number of checkouts over the past decade. I was curious to see whether the ranking of each book would correspond to its ranking on this chart (ex: if number 1 ranked book would have the most checkouts). The chart was designed to demonstrate the number of checkouts for each book but does not include time. The x-axis is the total number of checkouts in the past decade and the y-axis is the book being represented. Time is not displayed because I wanted to see the total number rather than checkouts over time.
 
-```{r chart3, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("chart3.R"), fig.width=10}
+I was very surprised to see that the number one ranked book, _In Search of Lost Time_, had the lowest number of checkouts by a wide margin. It makes sense because I personally had never heard of the book. The other books fell somewhere near their ranking on the list but it was interesting to see that _Ulysses_ had nearly double the amount _Don Quixote_ checkouts. Both of these books are large books that would take time to read and interpret so I was expecting a similar number of checkouts for both.
+
+```{r chart3, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("chart3.R"), fig.width=11}
 ```
-
-
