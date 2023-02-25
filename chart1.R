@@ -28,11 +28,13 @@ f_checkouts <- spl_10_df %>%
 
 # Line plot
 ggplot() + 
-  geom_line(data = nf_checkouts, aes(x = date, y = nonfiction_checkouts, color = "Non-fiction")) + 
-  geom_line(data = f_checkouts, aes(x = date, y = fiction_checkouts, color = "Fiction")) + 
+  geom_line(data = nf_checkouts, 
+            aes(x = date, y = nonfiction_checkouts, color = "Non-fiction")) + 
+  geom_line(data = f_checkouts, 
+            aes(x = date, y = fiction_checkouts, color = "Fiction")) + 
   scale_color_manual(values=c("#0000ff", "#ff0000")) + 
   scale_y_continuous(labels = label_number_si()) + 
   labs(title = "Non-fiction And Fiction Checkouts In The Past Six Years",
-       x = "Date",
+       x = "Year",
        y = "Number of Checkouts",
        color = "Genre")
